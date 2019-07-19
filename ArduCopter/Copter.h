@@ -688,6 +688,7 @@ private:
 
     // fence.cpp
     void fence_check();
+    void anzen_fence_check();
 
     // GCS_Mavlink.cpp
     void gcs_send_heartbeat(void);
@@ -918,6 +919,9 @@ private:
 #endif
 #if MODE_ZIGZAG_ENABLED == ENABLED
     ModeZigZag mode_zigzag;
+#endif
+#if MODE_ANZEN_ENABLED == ENABLED
+    ModeAnzen mode_anzen;
 #endif
 
     // mode.cpp

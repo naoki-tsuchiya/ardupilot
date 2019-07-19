@@ -605,6 +605,8 @@ private:
     void init_rangefinder(void);
     void read_rangefinder(void);
     bool rangefinder_alt_ok(void);
+    bool anzen_init();
+    void anzen_run();
 #if OPTFLOW == ENABLED
     void init_optflow();
 #endif

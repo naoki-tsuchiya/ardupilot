@@ -44,6 +44,9 @@ bool Sub::set_mode(control_mode_t mode, mode_reason_t reason)
     case SURFACE:
         success = surface_init();
         break;
+    case ANZEN:
+        success = anzen_init();
+        break;
 
 #if POSHOLD_ENABLED == ENABLED
     case POSHOLD:
@@ -127,6 +130,10 @@ void Sub::update_flight_mode()
         surface_run();
         break;
 
+    case ANZEN:
+        anzen_run();
+        break;
+
 #if POSHOLD_ENABLED == ENABLED
     case POSHOLD:
         poshold_run();
@@ -179,6 +186,7 @@ bool Sub::mode_has_manual_throttle(control_mode_t mode)
     case ACRO:
     case STABILIZE:
     case MANUAL:
+    case ANZEN:
         return true;
     default:
         return false;

@@ -1118,6 +1118,28 @@ private:
 
 };
 
+class ModeAnzen : public Mode {
+
+public:
+    // inherit constructor
+    using Copter::Mode::Mode;
+
+    virtual void run() override;
+
+    bool requires_GPS() const override { return false; }
+    bool has_manual_throttle() const override { return true; }
+    bool allows_arming(bool from_gcs) const override { return true; };
+    bool is_autopilot() const override { return false; }
+
+protected:
+
+    const char *name() const override { return "ANZEN"; }
+    const char *name4() const override { return "ANZN"; }
+
+private:
+
+};
+
 #if FRAME_CONFIG == HELI_FRAME
 class ModeStabilize_Heli : public ModeStabilize {
 
@@ -1238,7 +1260,7 @@ protected:
     uint32_t last_log_ms;   // system time of last time desired velocity was logging
 };
 
-class ModeZigZag : public Mode {        
+class ModeZigZag : public Mode {
 
 public:
 

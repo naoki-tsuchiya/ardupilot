@@ -47,6 +47,10 @@ Copter::Mode *Copter::mode_from_mode_num(const uint8_t mode)
         case ALT_HOLD:
             ret = &mode_althold;
             break;
+        case ANZEN:
+            ret = &mode_anzen;
+            break;
+
 
 #if MODE_AUTO_ENABLED == ENABLED
         case AUTO:

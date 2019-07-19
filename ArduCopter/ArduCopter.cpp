@@ -398,7 +398,9 @@ void Copter::three_hz_loop()
 
 #if AC_FENCE == ENABLED
     // check if we have breached a fence
-    fence_check();
+    // gcs().send_text(MAV_SEVERITY_INFO, "debug001");
+    //fence_check();
+    anzen_fence_check();
 #endif // AC_FENCE_ENABLED
 
 
